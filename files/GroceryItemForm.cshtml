@@ -1,0 +1,29 @@
+@model ListLlama.ViewModels.GroceryItemFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Grocery Item</h2>
+
+@using (Html.BeginForm("Save", "GroceryItems"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.GroceryItem.Title)
+        @Html.TextBoxFor(m => m.GroceryItem.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.GroceryItem.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GroceryItem.Quantity)
+        @Html.TextBoxFor(m => m.GroceryItem.Quantity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.GroceryItem.Quantity)
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.GroceryItem.IsChecked) Checked Off
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.GroceryItem.GroceryListId, new { Value = Model.GroceryListId })
+    @Html.HiddenFor(m => m.GroceryItem.GroceryItemId)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
