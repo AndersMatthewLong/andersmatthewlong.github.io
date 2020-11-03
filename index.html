@@ -42,9 +42,26 @@
                 While the checkbox portion (which indicates whether the user has obtained that item or not) was added by Natalie ruckman, I added the core structure of
                 the form. The portions of code I am most proud of are:
                 <ol>
-                    <li></li>
+                    <li>
+                        Here, the form looks for user input in the form of a text box, and inserts the data into the form's provided GroceryItemFormModel.
+                        This entered data is pushed into the GroceryFormViewModel's GroceryItem field, which is given back to the controller, which handles 
+                        the data from there.
+                    </li>
                     <img src="/images/groceryitemform/gif1.JPG" alt="part1">
-                    <li></li>
+                    <li>
+                        <ul>
+                        <li>
+                            Of course, not all the data fields need to / should be filled out by the user. For example, the <b>unique id</b> GroceryItemId is
+                            set to be 0 so that when the GroceryFormViewModel is passed back to the Controller, it recognizes that it is a new record and assigns
+                            it a new unique id.
+                        </li>
+                        <li>
+                            Then, there's the foreign key. The user should not have to enter this. Since the user clicked <b>Add New Item</b> from the specific grocery
+                            list page, the new item should be associated with the item. To do this, the GroceryItem in the GroceryFormViewModel is given the GroceryListId
+                            which is also provided in the GroceryItemFormModel.
+                        </li>
+                        </ul>
+                    </li>
                     <img src="/images/groceryitemform/gif2.JPG" alt="part1">
                 </ol>
                 <b><a href = https://andersmatthewlong.github.io/groceryitemform.html> here </a>.</b>
