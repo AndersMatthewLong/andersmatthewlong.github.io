@@ -15,66 +15,17 @@
             </p>
         </section>
         <section>
-            <h3>Original Home page (before project restart)</h3>
-        </section>
-        <section>
-            <h3>Grocery List Accessor</h3>
-
-        </section>
-        <section>
-            <h3>Grocery Item Accessor</h3>
+            <h3>Outline</h3>
             <p>
-                The Grocery Item Accessor's purpose is to contain all the functionality for interacting with the GroceryItem data
-                in the database. To sum it up, it performs the basic CRUD operations, along with a few other specific actions 
-                on the database. You can see an image of the file
-                <b><a href = https://andersmatthewlong.github.io/groceryitemaccessor.html> here </a>.</b>
-                and download a copy 
-                <b><a href = https://andersmatthewlong.github.io/files/GroceryItemAccessor.cs> here </a>.</b>
-            </p>
-        </section>
-        <section>
-            <h3>Linking the Grocery Items and the Grocery List</h3>
-        </section>
-        <section>
-            <h3>Grocery Item Form</h3>
-            <p>
-                The Grocery Item form is a View component of the List Llama website, and it is used to create new grocery items and edit existing items in the database.
-                While the checkbox portion (which indicates whether the user has obtained that item or not) was added by Natalie ruckman, I added the core structure of
-                the form. The portions of code I am most proud of are:
+                In this document, we will look at 5 samples of my code in the project.
             </p>
             <ol>
-                <br>
-                <img src="/images/groceryitemform/gif1.JPG" alt="part1">
-                <br>
-                <br>
-                <li>
-                    Here, the form looks for user input in the form of a text box, and inserts the data into the form's provided GroceryItemFormModel.
-                    This entered data is pushed into the GroceryFormViewModel's GroceryItem field, which is given back to the controller, which handles 
-                    the data from there.
-                </li>   
-                <br> 
-                <img src="/images/groceryitemform/gif2.JPG" alt="part1">      
-                <br>  
-                <br>        
-                <li>
-                    
-                    Of course, not all the data fields need to / should be filled out by the user. For example, the <b>unique id</b> GroceryItemId is
-                    set to be 0 so that when the GroceryFormViewModel is passed back to the Controller, it recognizes that it is a new record and assigns
-                    it a new unique id.
-                    <br>
-                    <br>
-                    Then, there's the foreign key. The user should not have to enter this. Since the user clicked <b>Add New Item</b> from the specific grocery
-                    list page, the new item should be associated with that list. To do this, the GroceryItem in the GroceryFormViewModel is given the GroceryListId
-                    which is also provided in the GroceryItemFormModel.
-                 
-                </li>
-                   
-            </ol>
-            <p>
-                To see a full image of the file, click <b><a href = https://andersmatthewlong.github.io/groceryitemform.html> here </a>.</b>
-                To download a copy of the file, click <b><a href = https://andersmatthewlong.github.io/files/GroceryItemForm.cshtml> here </a>.</b>
-            </p>
-            
+                <li><a href = https://andersmatthewlong.github.io/originalhomepage.html> The original home page (before project reset) </a></li>
+                <li><a href = https://andersmatthewlong.github.io/grocerylistaccessor.html> The grocery list accessor </a></li>
+                <li><a href = https://andersmatthewlong.github.io/groceryitemaccessor.html> The grocery item accessor </a></li>
+                <li><a href = https://andersmatthewlong.github.io/linkingitemandlist.html> Linking the GroceryItem and GroceryList classes </a></li>
+                <li><a href = https://andersmatthewlong.github.io/groceryitemform.html> The grocery list accessor </a></li>
+            <ol>
         </section>
     </body>
 
