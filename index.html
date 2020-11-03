@@ -46,6 +46,7 @@
                 <br>
                 <img src="/images/groceryitemform/gif1.JPG" alt="part1">
                 <br>
+                <br>
                 <li>
                     Here, the form looks for user input in the form of a text box, and inserts the data into the form's provided GroceryItemFormModel.
                     This entered data is pushed into the GroceryFormViewModel's GroceryItem field, which is given back to the controller, which handles 
@@ -53,22 +54,26 @@
                 </li>   
                 <br> 
                 <img src="/images/groceryitemform/gif2.JPG" alt="part1">      
-                <br>          
+                <br>  
+                <br>        
                 <li>
                     
                     Of course, not all the data fields need to / should be filled out by the user. For example, the <b>unique id</b> GroceryItemId is
                     set to be 0 so that when the GroceryFormViewModel is passed back to the Controller, it recognizes that it is a new record and assigns
                     it a new unique id.
                     <br>
+                    <br>
                     Then, there's the foreign key. The user should not have to enter this. Since the user clicked <b>Add New Item</b> from the specific grocery
-                    list page, the new item should be associated with the item. To do this, the GroceryItem in the GroceryFormViewModel is given the GroceryListId
+                    list page, the new item should be associated with that list. To do this, the GroceryItem in the GroceryFormViewModel is given the GroceryListId
                     which is also provided in the GroceryItemFormModel.
                  
                 </li>
                    
             </ol>
-            <b><a href = https://andersmatthewlong.github.io/groceryitemform.html> here </a>.</b>
-            <b><a href = https://andersmatthewlong.github.io/files/GroceryItemForm.cshtml> here </a>.</b>
+            <p>
+                To see a full image of the file, click <b><a href = https://andersmatthewlong.github.io/groceryitemform.html> here </a>.</b>
+                To download a copy of the file, click <b><a href = https://andersmatthewlong.github.io/files/GroceryItemForm.cshtml> here </a>.</b>
+            </p>
             
         </section>
     </body>
