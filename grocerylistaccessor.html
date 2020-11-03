@@ -5,6 +5,37 @@
     </head>
     <body>
         <section>
+            <h4>Summary</h4>
+            <p>
+                The <b>Grocery List Accessor</b> does all the data operations for grocery lists in the application.
+                I wrote the majority of the code for the current versions (though they are partially based off of earlier
+                accessors written by team member Natalie Ruckman). 
+            </p>
+        </section>
+        <section>
+            <h4>Functions</h4>
+            <p>
+                Below is a list of the functions in this accessor. They all perform basic CRUD (Create, Retrieve, Update, and Destroy)
+                operations on the GrceryList table in the database.
+            </p>
+            <ol>
+                <li><b>Get:</b> This function retrieves a single grocery list record from the database given its unique id.</li>
+                <li><b>Add:</b> This function inserts a given instance of the GroceryList class into the database.</li>
+                <li><b>GetAll:</b> This function retrieves all the GroceryList records from the database.</li>
+                <li>
+                    <b>Edit:</b> This function, given the id of an existing grocery list and an edited instance of the
+                    GroceryList class, applies all the properties of the edited instance to the existing record.
+                </li>
+            </ol>
+        </section>
+            <h4>Finally, the highlight of this file, the <b>Delete</b> function</h4>
+            <img src="/images/grocerylistaccessor/deletefunction.JPG" alt="delete function">
+            <p>
+                The <b>Delete function</b>> does what it sounds like it does, it deletes a grcoery list record, given its id,
+                however, in order to avoid leaving "orphaned" records of the grocery items on the list, we first cycle through
+                those items, deleting them all.
+            </p>
+        <section>
             <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
         </section>
     </body>
