@@ -2,4 +2,16 @@ html {
     Background: #004;
     color: #cdd; 
     font-family: Arial;
+
+}
+
+a:link {
+    color: yellow;
+}
+
+a:visited{
+    color: orange;
+}
+a:hover{
+    color: red;
 }
