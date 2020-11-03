@@ -5,7 +5,49 @@
     </head>
     <body>
         <section>
-            <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
+            <h4>Summary</h4>
+            <p>
+                The <b>Grocery Item Accessor</b> is the frontend page (View) in which the customer creates new 
+                and edits existing grocery items.
+            </p>
+        </section>
+        <section>
+            <h4>Workflow</h4>
+            <p>
+                Below is a summary of the flow of data through the application, and how it works with this form
+            </p>
+            <ol>
+                <li>
+                    First, somewhere on the GroceryItem index page, an actionlink is clicked, either the <b>New</b> link
+                    or the <b>Edit</b> link. These links redirect to the GroceryItemController.cs class.
+                </li>
+                <li>
+                    From these classes, an instance of the GroceryItemFormViewModel.cs class is made, containing the id
+                    of the grocery list the user is viewing, as well as an empty GroceryItem we will be creating / editing.
+                 </li>
+                <li>
+                    After this, we are directed to this form. The user is provided with text fields for the grocery item
+                    name and quantity.
+                </li>
+                <li>A checkbox is also available (this is a contribution by team member Natalie Ruckman).</li>
+                <li>The rest of the form is in the next section.</li>
+            </ol>
+        </section>
+            <h4>Finally, the highlight of this file, the <b>hidden fields</b> </h4>
+            <img src="/images/groceryitemform/gif2.JPG" alt="get only items for lis function">
+            <p>
+                While we want the user to input some fields in the form, there are some that they do not want / should not be able to edit.
+                These include the primary key in the database, as well as the foreign key which associates it with the correct list.
+                In this case, we want to implement hidden fields. The primary key was easy to implement, but the foreign key had to be
+                packaged with the GroceryItemFormViewModel to ensure that the form had the correct list to associate with the item.
+                For more on that topic, click <b><a href = https://andersmatthewlong.github.io/linkingitemandlist.html>here</a>.</b> 
+
+            </p>
+        <section>
+            <p>
+                Click <b><a href = "/files/GroceryItemForm.cshtml"> here </a> to download a copy of the GroceryItemForm file, and
+                click <b><a href = https://andersmatthewlong.github.io/index.html> here </a></b> to go back to home.
+            </p>
         </section>
     </body>
 
