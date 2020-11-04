@@ -24,7 +24,7 @@
                 <li><b><a href = "/files/linking/GroceryList/GroceryList.cs"> the grocery list model </a> </b></li>
                 <li><b><a href = "/files/linking/GroceryItem//GroceryItem.cs"> the grocery item model </a> </b></li>
                 <li><b><a href = "/files/linking/GroceryList/Index.cshtml"> the GroceryList index page </a> </b></li>
-                <li><b><a href = "/files/linking/ViewModels/GroceryItemIndexViewModel.cs"> the Grocery item index page view model </a> </b>>/li>
+                <li><b><a href = "/files/linking/ViewModels/GroceryItemIndexViewModel.cs"> the Grocery item index page view model </a> </b></li>
                 <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the Grocery item controller</a> </b></li>
                 <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the GroceryItem index page </a> </b></li>
             </ol>
@@ -38,9 +38,9 @@
             <ol>
                 <li>First, when we create the GroceryList class, we need to give it a primary key. We'll call this GroceryListId.</li>
                 <li>Next, we create a list of of the GroceryItem class.</li>
-                <img src="/images/linking/GroceryListModel.JPG" alt="grocery list model" width = "50%">
+                <img src="/images/linking/GroceryListModel.JPG" alt="grocery list model" width="50%">
                 <li>Then we create two fields in the GroceryItem class, one referencing the GroceryList, another referencing its Id</li>
-                <img src="/images/linking/GroceryItemModel.JPG" alt="grocery item model" width = "50%">
+                <img src="/images/linking/GroceryItemModel.JPG" alt="grocery item model" width="50%">
                 <li>
                     With this done, we simply perform a code first migration to create the properly linked tables. you
                     can find more info on this  
@@ -49,7 +49,26 @@
             </ol>
         </section>
         <section>
-            <h4>Now that we have linked the two tables</h4>
+            <h4>Now that we have linked the two tables, what do we need?</h4>
+            <p>
+                From here, we need to keep track of what grocery list the user is on. We'll do this in a variety of ways.
+            </p>
+            <ol>
+                <li>
+                    First, the user will start on the GroceryList index page. At this point, the program will know the GroceryListId
+                    since the model for this view is the GroceryList.
+                </li>
+                <li>
+                    If the user clicks the <b>Edit [blank] list</b> action link, they will be redirected to the GroceryItem index page.
+                </li>
+                <img src="/images/linking/ViewModel2.JPG" alt="action link" width="50%">
+                <li>
+                    As you can see in the above image, a model is passed to the new view. This model is the GroceryItemIndexViewModel.cs class
+                    which contains a GroceryListId field. By passing this ViewModel to the new index page, when we look at the GroceryItem
+                    index page, we will have the context of what list we are on.
+                </li>
+                <img src="/images/linking/ViewModel1.JPG" alt="action link" width="50%">
+            </ol>>
         </section>
         <section>
             <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
