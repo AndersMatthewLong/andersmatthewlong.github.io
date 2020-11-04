@@ -21,14 +21,28 @@
         <section>
             <h4>All files involved in this process are below, we will go through them in this order:</h4>
             <ol>
-                <li><b><a href = "/files/linking/GroceryList/GroceryList.cs"> the grocery list model </a> </b>></li>
-                <li><b><a href = "/files/linking/GroceryItem//GroceryItem.cs"> the grocery item model </a> </b>></li>
-                <li><b><a href = "/files/linking/GroceryList/Index.cshtml"> the GroceryList index page </a> </b>></li>
-                <li><b><a href = "/files/linking/ViewModels/GroceryItemIndexViewModel.cs"> the Grocery item index page view model </a> </b>></li>
-                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the Grocery item controller</a> </b>></li>
-                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the GroceryItem index page </a> </b>></li>
+                <li><b><a href = "/files/linking/GroceryList/GroceryList.cs"> the grocery list model </a> </b></li>
+                <li><b><a href = "/files/linking/GroceryItem//GroceryItem.cs"> the grocery item model </a> </b></li>
+                <li><b><a href = "/files/linking/GroceryList/Index.cshtml"> the GroceryList index page </a> </b></li>
+                <li><b><a href = "/files/linking/ViewModels/GroceryItemIndexViewModel.cs"> the Grocery item index page view model </a> </b>>/li>
+                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the Grocery item controller</a> </b></li>
+                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the GroceryItem index page </a> </b></li>
             </ol>
         </section>
+        <section>
+            <h4>Linking the files through a code first migration</h4>
+            <p>
+                First, before we can worry about only displaying the grocery items on a list, we need to actually link the two tables
+                using code first migrations.
+            </p>
+            <ol>
+                <li>First, when we create the GroceryList class, we need to give it a primary key. We'll call this GroceryListId.</li>
+                <li>Next, we create a list of of the GroceryItem class.</li>
+                <img src="/images/linking/GroceryListModel.JPG" alt="grocery list model">
+                <li>Then we create two fields in the GroceryItem class, one referencing the GroceryList, another referencing its Id</li>
+                <img src="/images/linking/GroceryItemModel.JPG" alt="grocery item model">
+            </ol>
+        <section>
         <section>
             <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
         </section>
