@@ -38,11 +38,19 @@
             <ol>
                 <li>First, when we create the GroceryList class, we need to give it a primary key. We'll call this GroceryListId.</li>
                 <li>Next, we create a list of of the GroceryItem class.</li>
-                <img src="/images/linking/GroceryListModel.JPG" alt="grocery list model">
+                <img src="/images/linking/GroceryListModel.JPG" alt="grocery list model" width = "50%">
                 <li>Then we create two fields in the GroceryItem class, one referencing the GroceryList, another referencing its Id</li>
-                <img src="/images/linking/GroceryItemModel.JPG" alt="grocery item model">
+                <img src="/images/linking/GroceryItemModel.JPG" alt="grocery item model" width = "50%">
+                <li>
+                    With this done, we simply perform a code first migration to create the properly linked tables. you
+                    can find more info on this  
+                    <b><a href = https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/#:~:text=Code%20First%20Migrations%20is%20the%20recommended%20way%20to,of%20changes%20you%20make%20to%20your%20EF%20model> here </a>.</b>
+                </li>
             </ol>
+        </section>
         <section>
+            <h4>Now that we have linked the two tables</h4>
+        </section>
         <section>
             <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
         </section>
