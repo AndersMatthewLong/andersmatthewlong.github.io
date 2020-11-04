@@ -59,15 +59,39 @@
                     since the model for this view is the GroceryList.
                 </li>
                 <li>
-                    If the user clicks the <b>Edit [blank] list</b> action link, they will be redirected to the GroceryItem index page.
+                    If the user clicks the <b>Edit [blank] list</b> action link, they will be redirected to the GroceryItemsController's
+                    Index function, which is passed an anonymous object containing this list id.
                 </li>
-                <img src="/images/linking/ViewModel2.JPG" alt="action link" width="50%">
+                <img src="/images/linking/ViewModel2.JPG" alt="action link" width="100%">
                 <li>
-                    As you can see in the above image, a model is passed to the new view. This model is the GroceryItemIndexViewModel.cs class
-                    which contains a GroceryListId field. By passing this ViewModel to the new index page, when we look at the GroceryItem
-                    index page, we will have the context of what list we are on.
+                    The GroceryItemcController class takes this given GroceryListId and creates an instance of the GroceryItemIndexViewModel class.
+                    This class contains the GroceryListId. From here the controller passes this object to the GroceryItem Index view. 
                 </li>
                 <img src="/images/linking/ViewModel1.JPG" alt="action link" width="50%">
+            </ol>>
+        </section>
+        <section>
+            <h4>Ok, we have kept track of what list we are on, what do we do now?</h4>
+            <p>
+                Frpm here, we only need the GroceryListId for two things.
+                <ul>
+                    <li>Displaying only the items on the viewed list.</li>
+                    <li>Adding new items to the list.</li>
+                </ul>
+            </p>
+            <ol>
+                <li>
+                    Let's look at that first one. This is handled in the Index method of the GroceryItem controller. Here, we 
+                    call the GroceryItemAccessor method which queries for all the GroceryItem instances with a foreign key
+                    matching the given GroceryListId.                    
+                </li>
+                <img src="/images/linking/IndexMethod.JPG" alt="action link" width="50%">
+                <li>
+                    Next, let's look at creating a specific GroceryItem and giving it the montitered GroceryListId.
+                    If the user clicks the <b>New Item</b> action link on the index page, the program passes an anonymous
+                    object containing the GroceryListId to the New function, which in turn "repackages" the GroceryListId
+                    into an instance of the GroceryItemFormViewModel.
+                </li>
             </ol>>
         </section>
         <section>
