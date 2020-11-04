@@ -1,0 +1,39 @@
+﻿@model ListLlama.ViewModels.GroceryItemIndexViewModel
+
+@{
+    ViewBag.Title = "GroceryItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Items in ____ list</h2>
+@if (!Model.GroceryItems.Any())
+{
+    <p>You don't have any items in this list yet.</p>
+    @Html.ActionLink("Would you like add an Item?", "New", "GroceryItems", new { GroceryListId = Model.GroceryListId }, null)
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Edit Item</th>
+                <th>Quantity</th>
+                <th>Checked Off</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.ActionLink("Add new Item", "New", "GroceryItems", new { GroceryListId = Model.GroceryListId }, null)
+            @foreach (var groceryItem in Model.GroceryItems)
+            {
+            <tr>
+                <td>@Html.ActionLink(groceryItem.Title, "Edit/", "GroceryItems", new { id = groceryItem.GroceryItemId }, null)</td>
+                <td>@groceryItem.Quantity</td>
+                <td>@groceryItem.IsChecked</td>
+                <td>@Html.ActionLink("Delete " + groceryItem.Title, "Delete/", "GroceryItems", new { id = groceryItem.GroceryItemId }, null)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+} 

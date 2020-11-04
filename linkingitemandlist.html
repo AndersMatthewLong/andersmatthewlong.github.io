@@ -5,6 +5,31 @@
     </head>
     <body>
         <section>
+            <h4>Summary</h4>
+            <p>
+                One of the major challenges in making this application was linking the grocery lists to grocery items.
+                There were two ways to do this, one was to make the database right away through a series of SQL queries.
+                The other option was to use "code first migrations." This is where models are implemented and migrations are performed
+                using the Nuget Package manager console, which builds the database for you.
+                We took the second option.
+            </p>
+            <p>
+                While linking the two tables was not particularly hard, keeping track of what list the user was viewing, and using that
+                data to display only the items on that list, as well as to add new items to that list, required several key portions of code.
+            </p>
+        </section>
+        <section>
+            <h4>All files involved in this process are below, we will go through them in this order:</h4>
+            <ol>
+                <li><b><a href = "/files/linking/GroceryList/GroceryList.cs"> the grocery list model </a> </b>></li>
+                <li><b><a href = "/files/linking/GroceryItem//GroceryItem.cs"> the grocery item model </a> </b>></li>
+                <li><b><a href = "/files/linking/GroceryList/Index.cshtml"> the GroceryList index page </a> </b>></li>
+                <li><b><a href = "/files/linking/ViewModels/GroceryItemIndexViewModel.cs"> the Grocery item index page view model </a> </b>></li>
+                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the Grocery item controller</a> </b>></li>
+                <li><b><a href = "/files/linking/GroceryItem/GroceryItemsController.cs"> the GroceryItem index page </a> </b>></li>
+            </ol>
+        </section>
+        <section>
             <b><a href = https://andersmatthewlong.github.io/index.html> back </a>.</b>
         </section>
     </body>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ListLlama.Models.GroceryList>
+
+@{
+    ViewBag.Title = "GroceryLists";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Lists</h2>
+@if (!Model.Any())
+{
+    <p>You don't have any lists yet.</p>
+    @Html.ActionLink("Would you like to make one?", "New", "GroceryLists", null, null)
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Edit List</th>
+                <th>Delete</th>
+                <th>Edit List Contents</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @Html.ActionLink("Add new list", "New", "GroceryLists", null, null)
+            @foreach (var groceryList in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(groceryList.Title, "Edit", "GroceryLists", new { id = groceryList.GroceryListId }, null)</td>
+                    <td>@Html.ActionLink("Delete "+groceryList.Title, "Delete", "GroceryLists", new { id = groceryList.GroceryListId }, null)</td>
+                    <td>@Html.ActionLink("Edit " + groceryList.Title, "Index", "GroceryItems", new { id = groceryList.GroceryListId }, null)</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
