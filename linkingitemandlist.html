@@ -68,7 +68,7 @@
                     This class contains the GroceryListId. From here the controller passes this object to the GroceryItem Index view. 
                 </li>
                 <img src="/images/linking/ViewModel1.JPG" alt="action link" width="50%">
-            </ol>>
+            </ol>
         </section>
         <section>
             <h4>Ok, we have kept track of what list we are on, what do we do now?</h4>
@@ -83,14 +83,16 @@
                 <li>
                     Let's look at that first one. This is handled in the Index method of the GroceryItem controller. Here, we 
                     call the GroceryItemAccessor method which queries for all the GroceryItem instances with a foreign key
-                    matching the given GroceryListId.                    
+                    matching the given GroceryListId. This is passed to the index page, which then only displays the correct items.                    
                 </li>
                 <img src="/images/linking/IndexMethod.JPG" alt="action link" width="50%">
                 <li>
                     Next, let's look at creating a specific GroceryItem and giving it the montitered GroceryListId.
                     If the user clicks the <b>New Item</b> action link on the index page, the program passes an anonymous
                     object containing the GroceryListId to the New function, which in turn "repackages" the GroceryListId
-                    into an instance of the GroceryItemFormViewModel.
+                    into an instance of the GroceryItemFormViewModel. This view model is then used by the view to associate
+                    the new item with the list in the database. More info on that topic can be seen 
+                    <b><a href = https://andersmatthewlong.github.io/groceryitemform.html> here </a></b>
                 </li>
             </ol>>
         </section>
