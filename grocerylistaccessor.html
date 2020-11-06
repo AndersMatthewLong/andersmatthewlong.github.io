@@ -39,6 +39,23 @@
         </section>
         <section>
             <h4>Software Engineering principles</h4>
+            <p>
+                In this segment, I will go over what good software Engineering principles were used in the provided code.
+            </p>
+            <ol>
+                <li>
+                    This class, like many others, is a good example of the Single Responsibilty principle of SOLID design.
+                    It's purpose is to perform basic CRUD operations on the database. It is, plain and simple, an accessor.
+                    Because it is designed in this way, the user almost always uses every bit of functionality in this class
+                    when they instantiate it. For example, the class is used in the GroceryListController, and every single 
+                    one of its functions is used. This ties into another principle, the Integration Segregation principle.
+                </li>
+                <li>
+                    The Inteface Segregation principle states that we should make purpose-specific interfaces. This is so that all the functionality
+                    of the interface, and only the functionality of the interface, is used in any implementation. While this is not an interface,
+                    in any place where this class is used, all of its functionality is used.
+                </li>
+            </ol>
         </section>
         <section>
             <p>

@@ -98,6 +98,28 @@
         </section>
         <section>
             <h4>Software Engineering principles</h4>
+            <p>
+                In this segment, I will go over what good software Engineering principles were used in the provided code.
+            </p>
+            <ol>
+                <li>
+                    As can be seen in this demonstration, a simple choice to connect the two pieces of data required changes to the entire
+                    project, all the way from the database, to the frontend forms. 
+                </li>
+                <li>
+                    This is why minimizing coupling, while maximizing cohesion, is such a big deal. By following the iDesign design pattern, we
+                    were able to follow the first principle of SOLID, that each component should have a single responsibility.
+                </li>
+                <li>
+                    For example, the GroceryItem index page has one purpose, to allow the user to interact with a single grocery list. This means that
+                    we only need to worry about supplying it with the right grocery items and the ability to interact with them. A change to the GroceryItemAccessor
+                    class, or to the engine, will not effect this page. Only the manager functions that interact with this page will directly effect it.
+                </li>
+                <li>
+                    Altogether, loose coupling and distinct components allowed us as a team, and me when implementing this feature, to maintain
+                    a well organized project even as large-scale changes were being implmented in the database.
+                </li>
+            </ol>
         </section>
         <section>
             Click <b><a href = https://andersmatthewlong.github.io/index.html> here </a></b> to go home.
