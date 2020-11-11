@@ -1,4 +1,4 @@
-﻿using ListLlama.Accessors;
+﻿using ListLlama.Engines;
 using ListLlama.Models;
 using ListLlama.ViewModels;
 using System;
@@ -12,10 +12,6 @@ using System.Web.Mvc;
  * The purpose of this class is to handle the user experience with Grocery Items
  * including the listing of all items in a list, the creation of new, deletion of old,
  * and editing of existing item records in the program 
- * 
- * TODO
- * -implement deletion functionality
- * -add check off functionality.
  */
 
 namespace ListLlama.Controllers
@@ -24,12 +20,12 @@ namespace ListLlama.Controllers
     {
         // FIELDS
 
-        private GroceryItemAccessor groceryItemAccessor;
+        private IGroceryItemEngine groceryItemEngine;
 
         //Gives the controller access to the database
         public GroceryItemsController()
         {
-            groceryItemAccessor = new GroceryItemAccessor();
+            groceryItemEngine = new GroceryItemEngine();
         }
     
 
@@ -44,7 +40,7 @@ namespace ListLlama.Controllers
         {
             var GroceryItemIndexViewModel = new GroceryItemIndexViewModel
             {
-                GroceryItems = groceryItemAccessor.GetOnlyItemsForList((int)id),
+                GroceryItems = groceryItemEngine.GetItemsOnList((int)id),
                 GroceryListId = (int)id
             };
             
@@ -95,12 +91,12 @@ namespace ListLlama.Controllers
             }
             if (groceryItem.GroceryItemId == 0)
             {
-                groceryItemAccessor.Add(groceryItem);
+                groceryItemEngine.InsertGroceryItem(groceryItem);
             }
             else
             {
-                var groceryItemsInDb = groceryItemAccessor.Get(groceryItem.GroceryItemId);
-                groceryItemAccessor.Edit(groceryItem.GroceryItemId, groceryItem);
+                var groceryItemsInDb = groceryItemEngine.GetGroceryItem(groceryItem.GroceryItemId);
+                groceryItemEngine.UpdateGroceryItem(groceryItem.GroceryItemId, groceryItem);
             }
         
             return RedirectToAction("Index", "GroceryItems", new { id = groceryItem.GroceryListId });
@@ -110,7 +106,7 @@ namespace ListLlama.Controllers
          
         public ActionResult Edit(int id)
         {
-            var groceryItem = groceryItemAccessor.Get(id);
+            var groceryItem = groceryItemEngine.GetGroceryItem(id);
 
             if (groceryItem == null)
                 return RedirectToAction("Error", "Home");
@@ -124,8 +120,8 @@ namespace ListLlama.Controllers
 
         public ActionResult Delete(int id)
         {
-            var groceryItem = groceryItemAccessor.Get(id);
-            groceryItemAccessor.Delete(id);
+            var groceryItem = groceryItemEngine.GetGroceryItem(id);
+            groceryItemEngine.DeleteGroceryItem(id);
             return RedirectToAction("Index", "GroceryItems", new { id = groceryItem.GroceryListId });
         }
 
