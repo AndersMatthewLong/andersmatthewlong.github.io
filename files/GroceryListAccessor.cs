@@ -9,7 +9,7 @@ namespace ListLlama.Accessors
 {
 
    
-    public class GroceryListAccessor
+    public class GroceryListAccessor : IGroceryListAccessor
     {
         private ApplicationDbContext _context;
         public GroceryListAccessor()
@@ -17,7 +17,7 @@ namespace ListLlama.Accessors
             _context = new ApplicationDbContext();
         }
 
-        protected void Dispose(bool disposing)
+        public void Dispose(bool disposing)
         {
             _context.Dispose();
 
